@@ -1,8 +1,6 @@
 
 # Thanks to blizz-cogs, cause the core command remove part was copied from his simpleping cog.
 from .cop import cop
-
-
 async def setup(bot):
     old_info_command = bot.get_command("info")
     if old_info_command:
