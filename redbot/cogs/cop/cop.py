@@ -54,11 +54,4 @@ class cop(commands.Cog):
         embed.add_field(inline=False, name = 'Emojis', value = "Most of the emojis used in this bot is taken from NQN, so the credits goes to their respective owners.")  
         embed.add_field(inline=False, name = 'Cogs and their creators(Thanks to thoose awesome people for their work :P)', value = "Work In Progress 🤠")
         await ctx.send(embed=embed)
-    # Since, i was having some issue in removing core commands, i made this bping instead of ping :)
-    @commands.command()
-    async def bping(self, ctx):
-        """Shows Cop's ping"""
-        ping = round(self.bot.latency * 1000)
-        await ctx.send(f" You're being detained at a speed of **{ping}ms**!")
-        
         
