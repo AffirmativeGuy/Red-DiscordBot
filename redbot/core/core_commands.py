@@ -400,8 +400,9 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
 
     @commands.command(hidden=True)
     async def ping(self, ctx: commands.Context):
+        ping = round(self.bot.latency * 1000)
         """Pong."""
-        await ctx.send("Pong.")
+        await ctx.send(f" You're being detained at a speed of **{ping}ms**!")
 
     @commands.command()
     async def info(self, ctx: commands.Context):
@@ -555,7 +556,7 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
         uptime = self.bot.uptime.replace(tzinfo=datetime.timezone.utc)
         uptime_str = humanize_timedelta(timedelta=delta) or _("Less than one second.")
         await ctx.send(
-            _("I have been up for: **{time_quantity}** (since {timestamp})").format(
+            _("I have not since **{time_quantity} 😭!** (which is {timestamp})").format(
                 time_quantity=uptime_str, timestamp=discord.utils.format_dt(uptime, "f")
             )
         )
