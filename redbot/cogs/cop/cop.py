@@ -25,6 +25,8 @@ class cop(commands.Cog):
            #  self.bot.remove_command("ping")
     async def cog_unload(self) -> None:
         global old_ping
+        self.bot.get_command("info")
+        self.bot.remove_command("info")
         if old_ping:
             with contextlib.suppress(Exception):
                 self.bot.remove_command("ping")
@@ -32,7 +34,7 @@ class cop(commands.Cog):
                 self.bot.remove_command("info")
                 self.bot.get_command("info")
     @commands.command()
-    async def binfo(self, ctx):
+    async def info(self, ctx):
         """Shows information about Cop<:cop:1243924879045034075>."""
         ping = round(self.bot.latency * 1000)
         python_url = "https://www.python.org/"
