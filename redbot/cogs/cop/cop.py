@@ -30,6 +30,7 @@ class cop(commands.Cog):
                 self.bot.remove_command("ping")
                 self.bot.add_command(old_ping)
                 self.bot.remove_command("info")
+                self.bot.get_command("info")
     @commands.command()
     async def info(self, ctx):
         """Shows information about Cop<:cop:1243924879045034075>."""
@@ -79,6 +80,8 @@ class cop(commands.Cog):
 async def setup(bot: Red) -> None:
     global old_ping
     old_ping = bot.get_command("ping")
+    bot.get_command("info")
+    bot.remove_command("info")
     if old_ping:
         bot.remove_command(old_ping.name)
         cog = cop(bot)
