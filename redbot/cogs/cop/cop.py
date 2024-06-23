@@ -32,7 +32,7 @@ class cop(commands.Cog):
                 self.bot.remove_command("info")
                 self.bot.get_command("info")
     @commands.command()
-    async def info(self, ctx):
+    async def binfo(self, ctx):
         """Shows information about Cop<:cop:1243924879045034075>."""
         ping = round(self.bot.latency * 1000)
         python_url = "https://www.python.org/"
