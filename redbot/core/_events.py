@@ -41,12 +41,14 @@ from rich.text import Text
 log = logging.getLogger("red")
 
 INTRO = r"""
-______         _           ______ _                       _  ______       _
-| ___ \       | |          |  _  (_)                     | | | ___ \     | |
-| |_/ /___  __| |  ______  | | | |_ ___  ___ ___  _ __ __| | | |_/ / ___ | |_
-|    // _ \/ _` | |______| | | | | / __|/ __/ _ \| '__/ _` | | ___ \/ _ \| __|
-| |\ \  __/ (_| |          | |/ /| \__ \ (_| (_) | | | (_| | | |_/ / (_) | |_
-\_| \_\___|\__,_|          |___/ |_|___/\___\___/|_|  \__,_| \____/ \___/ \__|
+
+  ____            
+ / ___|___  _ __  
+| |   / _ \| '_ \ 
+| |__| (_) | |_) |
+ \____\___/| .__/ 
+           |_|    
+           
 """
 
 _ = Translator(__name__, __file__)
@@ -137,14 +139,14 @@ def init_events(bot, cli_flags):
     @bot.event
     async def on_connect():
         if bot._uptime is None:
-            log.info("Connected to Discord. Getting ready...")
+            log.info("Wolah 👀 connected to Discord, Getting ready 🤵🏻......")
 
     @bot.event
     async def on_ready():
         try:
             await _on_ready()
         except Exception as exc:
-            log.critical("The bot failed to get ready!", exc_info=exc)
+            log.critical("The bot failed to connect 😶🤔!", exc_info=exc)
             sys.exit(ExitCodes.CRITICAL)
 
     async def _on_ready():
@@ -186,7 +188,7 @@ def init_events(bot, cli_flags):
             )
 
         rich_console = rich.get_console()
-        rich_console.print(INTRO, style="red", markup=False, highlight=False)
+        rich_console.print(INTRO, style="purple", markup=False, highlight=False)
         if guilds:
             rich_console.print(
                 Columns(
@@ -202,9 +204,6 @@ def init_events(bot, cli_flags):
             "Loaded {} cogs with {} commands".format(len(bot.cogs), len(bot.commands))
         )
 
-        if invite_url:
-            rich_console.print(f"\nInvite URL: {Text(invite_url, style=f'link {invite_url}')}")
-            # We generally shouldn't care if the client supports it or not as Rich deals with it.
         if not guilds:
             rich_console.print(
                 f"Looking for a quick guide on setting up Red? Checkout {Text('https://start.discord.red', style='link https://start.discord.red}')}"
