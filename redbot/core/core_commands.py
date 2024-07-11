@@ -556,8 +556,8 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
         uptime = self.bot.uptime.replace(tzinfo=datetime.timezone.utc)
         uptime_str = humanize_timedelta(timedelta=delta) or _("Less than one second.")
         await ctx.send(
-            _("I have not slept since **{time_quantity} 😭!** (which is {timestamp})").format(
-                time_quantity=uptime_str, timestamp=discord.utils.format_dt(uptime, "f")
+            _("I have not slept since **{time_quantity} 😭!**").format(
+                time_quantity=uptime_str
             )
         )
 
