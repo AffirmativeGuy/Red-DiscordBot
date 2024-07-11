@@ -1,4 +1,4 @@
-# This is a custom fork made by me for my bot, dont know if i am going to use it or not but i would be updating it and sync it with new changes in the main fork.
+
 
 <h1 align="center">
   <br>
@@ -7,6 +7,9 @@
   Red Discord Bot
   <br>
 </h1>
+
+# This is a custom fork made by me for my bot, dont know if i am going to use it or not but i would be updating it and sync it with new changes in the main fork.
+## All the changes made in the repo would be tested on one of my Test Bot AKA Daddy Cop
 
 <h4 align="center">Music, Moderation, Trivia, Stream Alerts and Fully Modular.</h4>
 
@@ -134,3 +137,11 @@ Bot Project.
 
 This project vendors [discord.ext.menus](https://github.com/Rapptz/discord-ext-menus) package made by Danny Y. (Rapptz) which is distributed under MIT License.
 A copy of this license can be found in the [discord-ext-menus.LICENSE](redbot/vendored/discord-ext-menus.LICENSE) file in the [redbot/vendored](redbot/vendored) folder of this repository.
+
+
+ # Credits
+
+This repo is a custom fork of the Red-DiscordBot [repo](https://github.com/Cog-Creators/Red-DiscordBot), intended to be used for customization and modification and in helping me with tinkering with python and the redbot it self.
+
+
+
