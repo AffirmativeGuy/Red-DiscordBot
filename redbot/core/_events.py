@@ -56,7 +56,7 @@ _ = Translator(__name__, __file__)
 
 def get_outdated_red_messages(pypi_version: str, py_version_req: str) -> Tuple[str, str]:
     outdated_red_message = _(
-        "Your Red instance is out of date! {} is the current version, however you are using {}!"
+        "Cop is out of date 🚨! {} is the latest version, however you are using {} 👀💀!"
     ).format(pypi_version, red_version)
     rich_outdated_message = (
         f"[red]Outdated version![/red]\n"
@@ -381,10 +381,10 @@ def init_events(bot, cli_flags):
             if not message:
                 if ctx.author.id in bot.owner_ids:
                     message = inline(
-                        _("Error in command '{command}'. Check your console or logs for details.")
+                        _("Error in command '{command} 🐱‍🐉'. Check your console or logs for more details.")
                     )
                 else:
-                    message = inline(_("Error in command '{command}'."))
+                    message = inline(_("Well guess what? The command '{command}' errored!."))
             await ctx.send(message.replace("{command}", ctx.command.qualified_name))
         elif isinstance(error, commands.CommandNotFound):
             help_settings = await HelpSettings.from_context(ctx)
@@ -414,11 +414,11 @@ def init_events(bot, cli_flags):
             if error.message:
                 await ctx.send(error.message)
         elif isinstance(error, commands.NoPrivateMessage):
-            await ctx.send(_("That command is not available in DMs."))
+            await ctx.send(_("Well, this command doesn't works in DMs 🐮."))
         elif isinstance(error, commands.PrivateMessageOnly):
-            await ctx.send(_("That command is only available in DMs."))
+            await ctx.send(_("Well, this command only works in DMs 🐮."))
         elif isinstance(error, commands.NSFWChannelRequired):
-            await ctx.send(_("That command is only available in NSFW channels."))
+            await ctx.send(_("Yo, why would you do that? This command is only for NSFW based channel 😶."))
         elif isinstance(error, commands.CheckFailure):
             pass
         elif isinstance(error, commands.CommandOnCooldown):
@@ -430,7 +430,7 @@ def init_events(bot, cli_flags):
             relative_time = discord.utils.format_dt(
                 datetime.now(timezone.utc) + timedelta(seconds=error.retry_after), "R"
             )
-            msg = _("This command is on cooldown. Try again {relative_time}.").format(
+            msg = _("Chill buddy, this command is on cooldown ⏱. Try again {relative_time}.").format(
                 relative_time=relative_time
             )
             await ctx.send(msg, delete_after=error.retry_after)
@@ -438,12 +438,12 @@ def init_events(bot, cli_flags):
             if error.per is commands.BucketType.default:
                 if error.number > 1:
                     msg = _(
-                        "Too many people using this command."
+                        "Oof! Too many people using this command. 🐧"
                         " It can only be used {number} times concurrently."
                     ).format(number=error.number)
                 else:
                     msg = _(
-                        "Too many people using this command."
+                        "Oof! Too many people using this command. 🐧"
                         " It can only be used once concurrently."
                     )
             elif error.per in (commands.BucketType.user, commands.BucketType.member):
