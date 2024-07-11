@@ -144,4 +144,6 @@ A copy of this license can be found in the [discord-ext-menus.LICENSE](redbot/ve
 This repo is a custom fork of the Red-DiscordBot [repo](https://github.com/Cog-Creators/Red-DiscordBot), intended to be used for customization and modification and in helping me with tinkering with python and the redbot it self.
 
 
+<a><img src="https://github.com/AffirmativeGuy/AffirmativeGuy/blob/main/banner.gif" alt="My Woahh Banner"></a>
+
 
