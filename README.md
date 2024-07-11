@@ -1,3 +1,5 @@
+# This is a custom fork made by me for my bot, dont know if i am going to use it or not but i would be updating it and sync it with new changes in the main fork.
+
 <h1 align="center">
   <br>
   <a href="https://github.com/Cog-Creators/Red-DiscordBot/tree/V3/develop"><img src="https://imgur.com/pY1WUFX.png" alt="Red - Discord Bot"></a>
